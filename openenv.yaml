@@ -1,0 +1,15 @@
+name: seo-audit-env
+version: "1.0.0"
+description: "Real-world SEO audit environment for AI agents"
+tasks:
+  - id: meta_description_check
+    difficulty: easy
+    max_score: 1.0
+  - id: alt_tag_audit
+    difficulty: medium
+    max_score: 1.0
+  - id: full_onpage_audit
+    difficulty: hard
+    max_score: 1.0
+action_space: text
+observation_space: structured_json
