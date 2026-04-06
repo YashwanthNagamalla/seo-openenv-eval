@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=42", "wheel"]
+requires = ["setuptools>=45", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -7,5 +7,22 @@ name = "seo-openenv"
 version = "0.1.0"
 description = "SEO OpenEnv for Scaler assessment"
 readme = "README.md"
-requires-python = ">=3.8"
-authors = ["Yashwanth <you@example.com>"]
+requires-python = ">=3.10"
+authors = [{name = "Yashwanth", email = "you@example.com"}]
+dependencies = [
+	"openenv-core>=0.2.0",
+	"fastapi>=0.111.0",
+	"uvicorn>=0.30.0",
+	"pydantic>=2.7.0",
+	"openai",
+	"requests>=2.31.0",
+	"python-dotenv>=1.0.1"
+]
+
+[project.scripts]
+# Server entry point - enables running via: uv run --project . server
+server = "server.app:main"
+
+[tool.setuptools]
+include-package-data = true
+packages = ["app", "app.tasks", "server"]
